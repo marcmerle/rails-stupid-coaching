@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container text-left">
+      <div class="answer p-6 my-5">
+        <h1>Stupid coaching</h1>
+          <div class="me">
+            <%= params[:question] %>
+            <p><em>-me</em></p>
+          </div>
+
+          <div class="coach">
+            </div>
+            <% if params[:question] == "hello" %>
+              <%= "hi" %>
+            <% elsif params[:question] == "what time is it?" %>
+              <%= Time.now %>
+            <% elsif params[:question] == "I am going to work" %>
+              <%= "great !" %>
+            <% elsif params[:question].include? "?" %>
+              <%= "Silly question go back to work" %>
+            <% else %>
+              <%= "I don't care, get dressed and go to work!" %>
+            <% end %>
+            <p><em>-coach</em></p>
+          </div>
+
+          <div class="ask">
+            <%= link_to "Ask a new question", ask_path %>
+          </div>
+
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
